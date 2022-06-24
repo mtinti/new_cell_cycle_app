@@ -1,0 +1,50 @@
+#content {
+		margin-top: 35px;
+		height: 90vh;
+		border-bottom: 1px solid #eee;
+	}
+#content .col-xs-6 {
+		height: 85vh;
+		overflow: auto;
+	}
+#content .col-xs-6 {
+		border-right: 1px solid #eee;
+	}
+	
+#data-table {
+		font-family: 'Helvetica Neue';
+		font-size: 14px;
+		overflow: auto;
+		height: 85vh;
+	}
+	
+.table-header {
+		background-color: #ccc;
+	}
+th { font-size: 12px; }
+td { font-size: 11px; }
+	
+label {font-size: 12px;}
+
+#paginate_button {font-size: 12px;}
+
+#loading {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	display: block;
+	opacity: 0.7;
+	background-color: #fff;
+	z-index: 99;
+	text-align: center;
+  }
+  
+  #loading-image {
+	position: absolute;
+	top: 100px;
+	left: 240px;
+	z-index: 100;
+  }
+

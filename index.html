@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>RadViz</title>
+	<link rel="stylesheet" type="text/css" href='./libs/bootstrap.min.css'>
+	<link rel="stylesheet" type="text/css" href='https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css'>
+	<link rel="stylesheet" type="text/css" href='mystyle.css'>
+</head>
+
+<body>
+	<div id="loading">
+		<img id="loading-image" src="loading.gif" alt="Loading..." />
+	</div>
+	<script src='./libs/bootstrap.min.js' defer></script>
+    <script src="./libs/jquery-2.1.4.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.js' defer></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.23.1/babel.min.js' defer></script>
+	<script src='https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js' defer></script>
+	<script src='./src/RadViz.js' defer></script>	
+	<script src='index.js' defer></script>	
+	
+
+	<!-- Static navbar -->
+<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		  <div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			  <span class="sr-only">Toggle navigation</span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+			
+			<a class="navbar-brand" href="#">Genome-scale functional profiling of cell cycle controls in African trypanosomes</a>
+		  </div>
+		  <div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+			  
+
+			  <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacts <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+						<li>Experimentalist<a href="mailto:someone@example.com">Catarina Marques</a></li>
+						<li>Web Development<a href="mailto:m.tinti@dundee.ac.uk"> Michele Tinti</a></li>
+						<li>Principal Investigator<a href="mailto:d.horn@dundee.ac.uk">David Horn</a></li>
+				</ul>
+			  </li>
+			</ul>
+				  
+				</form>
+	
+		  </div><!--/.nav-collapse -->
+		</div><!--/.container-fluid -->
+	  </nav>
+
+	<div class="row">
+    	<div class="col-xs-12" id="content" >
+
+					<div class="col-xs-6">
+
+						
+							<h2>Radviz Plot</h2>
+						
+
+
+						
+							<div class="radviz-title" 
+							style="font-size: 16px; font-family: 'Muli', 
+							'Helvetica', Arial, sans-serif; font-weight: bold; color: #000000;">
+							<button id="resetRadViz" onclick="resetRadViz()">Reset</button>
+							</div>								
+									
+
+						<div id="radviz" ></div>
+
+
+					</div>
+
+
+					 
+
+
+
+					<div class="col-xs-6">
+
+						<div> 
+							
+							<h2>App Description</h2>
+							This app allws easy navigation of the cell cycle dataset. 
+							The Radviz visualization on the left pulls the genes (little circles) closer to time point where they show maximum expression.
+							The genes have been arbitrarly assigned to one class , the one where they show the maximum number of reads. As genes myght be involved in 
+							mutiple time points, the mapping is just a rough indiccation. In particular, When a genes is found with similar amount 
+							of reads in different time points, it is pulled towwards the center of the plot.
+							The reads coverage plots (appearing as tooltips 
+							after hoovering on the gene table or the radviz plot) shuld be used to assess 
+							the number of different fragments that hits a gene. This can be aproximatly evaluetad by the amount of piled up reaads that appears in the 
+							images (barcoded reads).
+							
+							
+						</div>
+						<br>
+
+						
+						 <div class="table-title" style="font-size: 16px; font-family: 'Muli',
+						 'Helvetica', Arial, sans-serif; font-weight: bold; color: #000000;">Data Table</div>
+						<div id="data-table" ></div>
+						
+					</div>
+		</div>
+	</div>
+	<div class="row"></div>
+<!-- Footer -->
+<footer class="page-footer font-small">
+
+	<!-- Copyright -->
+	<div class="footer-copyright text-left py-3">
+		<a href="#" class="navbar-left"><img src="uod-wcair-full.png"></a>
+	</div>
+	<!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->	
+</div>
+
+					
+				
+				
+					
+			
+
+
+
+<script>
+$(window).load(function() {
+	$('#loading').hide();
+});
+</script>
+</body>	
+
+

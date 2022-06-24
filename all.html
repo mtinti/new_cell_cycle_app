@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>RadViz</title>
+	<link rel="stylesheet" type="text/css" href='./libs/bootstrap.min.css'>
+	<link rel="stylesheet" type="text/css" href='https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css'>
+	<link rel="stylesheet" type="text/css" href='mystyle.css'>
+
+
+</head>
+
+<body>
+	<script src='./libs/bootstrap.min.js' defer></script>
+    <script src="./libs/jquery-2.1.4.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.js' defer></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.23.1/babel.min.js' defer></script>
+	<script src='https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js' defer></script>
+	<script src='./src/RadViz.js' defer></script>	
+	<script src='all.js' defer></script>	
+	
+	
+    <div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12" id="content">
+	
+					<div class="row">
+	
+						<div class="col-xs-6">
+							<div class="image-title" 
+							style="font-size: 16px; font-family: 'Muli', 
+							'Helvetica', Arial, sans-serif; font-weight: bold; color: #000000;">Image</div>	
+							
+							
+							<div id="image_place" style="padding-left: 0px;  padding-right: 0px;">
+								<img src="Uni-logo-Dundee_730_290_80.jpg" class="img-fluid">
+							</div>
+								
+	
+						</div>
+						 
+						<div class="col-xs-6">
+							 <div class="table-title" style="font-size: 16px; font-family: 'Muli',
+							 'Helvetica', Arial, sans-serif; font-weight: bold; color: #000000;">Data Table</div>
+							<div id="data-table" ></div>
+						
+						</div>
+						
+					
+					</div>
+	
+				</div>
+	
+			</div>
+			
+		</div>
+	
+	
+</body>	
+
+

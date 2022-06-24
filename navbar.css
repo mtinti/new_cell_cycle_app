@@ -1,0 +1,192 @@
+@import "compass/css3";
+
+// Navbar Variable Definitions
+
+// default overrides
+$navbar-height: 50px;         // override default min-height
+$navbar-margin-bottom: 20px;  // override default margin-bottom
+$navbar-border-radius: 0px;   // override default border-radius
+
+// Do not change unless grid float breakpoint max has been
+// changed in bootstrap code.
+$grid-float-breakpoint-max: 767px;
+
+// specify class name
+// ex. default = .navbar-default
+// ex. inverse = .navbar-inverse
+// ex. custom  = .navbar-custom
+$class-name: custom;
+
+$navbar-custom-color: #fff;
+$navbar-custom-bg: #00519a;
+$navbar-custom-border: darken($navbar-custom-bg, 10%);
+
+// Links
+$navbar-custom-link-color: $navbar-custom-color;
+$navbar-custom-link-hover-color: #fff;
+$navbar-custom-link-hover-bg: transparent;
+$navbar-custom-link-active-color: $navbar-custom-link-hover-color;
+$navbar-custom-link-active-bg: darken($navbar-custom-bg, 10%);
+$navbar-custom-link-disabled-color: #444;
+$navbar-custom-link-disabled-bg: transparent;
+
+// Brand
+$navbar-custom-brand-color: $navbar-custom-link-color;
+$navbar-custom-brand-hover-color: #fff;
+$navbar-custom-brand-hover-bg: transparent;
+// boolean to determine if padding and image sizing should be applied to brand.
+$navbar-custom-brand-image: false;
+// Only applies if $navbar-custom-brand-image = true
+$navbar-custom-brand-padding: 10px; 
+// Only applies if $navbar-custom-brand-image = true
+$navbar-custom-brand-img-max-height: 30px;
+
+// Toggle
+$navbar-custom-toggle-hover-bg: darken($navbar-custom-bg, 10%);
+$navbar-custom-toggle-icon-bar-bg: #fff;
+$navbar-custom-toggle-border-color: darken($navbar-custom-bg, 10%);
+
+
+
+// End Navbar Variable Definitions
+
+.navbar-#{$class-name} {
+  background-color: $navbar-custom-bg;
+  border-color: $navbar-custom-border;
+  
+  @media (min-width: $grid-float-breakpoint-max + 1 ) {
+    border-radius: $navbar-border-radius;
+  }
+  
+  .navbar-brand {
+    color: $navbar-custom-brand-color;
+    @if $navbar-custom-brand-image {
+      padding: $navbar-custom-brand-padding;  
+      & > img {
+        max-height: $navbar-custom-brand-img-max-height;
+      }
+    }    
+    
+    &:hover,
+    &:focus {
+      color: $navbar-custom-brand-hover-color;
+      background-color: $navbar-custom-brand-hover-bg;
+    }
+  }
+  
+  .navbar-text {
+    color: $navbar-custom-color;
+  }
+  
+  .navbar-nav {
+    
+    & > li > a {
+      color: $navbar-custom-link-color;      
+      &:hover,
+      &:focus {
+        color: $navbar-custom-link-hover-color;
+        background-color: $navbar-custom-link-hover-bg;
+      }
+    }
+    
+    & > .active > a {
+      &,
+      &:hover, 
+      &:focus {
+        color: $navbar-custom-link-active-color;
+        background-color: $navbar-custom-link-active-bg;
+      }
+    }
+    
+    & > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-custom-link-disabled-color;
+        background-color: $navbar-custom-link-disabled-bg;
+      }
+    }    
+  } // .navbar-nav
+  
+  .navbar-toggle {
+    border-color: $navbar-custom-toggle-border-color;
+    &:hover,
+    &:focus {
+      background-color: $navbar-custom-toggle-hover-bg;
+    }
+    
+    .icon-bar {
+      background-color: $navbar-custom-toggle-icon-bar-bg;
+    }
+  } //.navbar-toggle
+  
+  .navbar-collapse,
+  .navbar-form {
+    border-color: darken($navbar-custom-bg, 7%);
+  }
+  
+  .navbar-nav {
+    & > .open > a {
+      &, 
+      &:hover, 
+      &:focus {
+        background-color: $navbar-custom-link-active-bg;
+        color: $navbar-custom-link-active-color;
+      }
+    }
+    
+    @media (max-width: $grid-float-breakpoint-max) {
+      .open .dropdown-menu {
+        & > .dropdown-header {
+          border-color: $navbar-custom-border;
+        }
+        .divider {
+          background-color: $navbar-custom-border;
+        }
+        & > li > a {
+          color: $navbar-custom-link-color;
+          &:hover,
+          &:focus {
+            color: $navbar-custom-link-hover-color;
+            background-color: $navbar-custom-link-hover-bg;
+          }
+        }
+        & > .active > a {
+          &, &:hover, &:focus {
+            color: $navbar-custom-link-active-color;
+            background-color: $navbar-custom-link-active-bg;
+          }
+        }
+        & > .disabled > a {
+          &, &:hover, &:focus {
+            color: $navbar-custom-link-disabled-color;
+            background-color: $navbar-custom-link-disabled-bg;
+          }
+        }
+      }
+    }
+  } // .navbar-nav
+  
+  .navbar-link {
+    color: $navbar-custom-link-color;
+    &:hover {
+      color: $navbar-custom-link-hover-color;
+    }
+  } // .navbar-link
+  
+  .btn-link {
+    color: $navbar-custom-link-color;
+    &:hover, 
+    &:focus {
+      color: $navbar-custom-link-hover-color;
+    }
+    
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: $navbar-custom-link-disabled-color;
+      }
+    }
+  } // .btn-link
+} // .navbar-#{$class-name}
